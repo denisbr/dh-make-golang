@@ -130,7 +130,6 @@ func makeUpstreamSourceTarball(gopkg string) (string, string, map[string]bool, s
 	f.Close()
 	base := filepath.Base(gopkg)
 	dir := filepath.Dir(gopkg)
-	log.Printf("executing tar cJf", tempfile, "--exclude-vcs --exclude=Godeps", fmt.Sprintf("--exclude=%s/debian", base), base)
 	cmd = exec.Command(
 		"tar",
 		"cJf",
